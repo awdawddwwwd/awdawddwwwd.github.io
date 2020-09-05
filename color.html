@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <body id="body">
+        <button onclick="changecol()">
+            Change Color!
+        </button>
+        <input id="in">
+        <button onclick="pusher()">push</button>
+
+        <script>
+            var count = 0;
+            var body = document.getElementById("body")
+            var colors = ["blue","red","black","orange"]
+            function changecol(){
+                body.style.backgroundColor = colors[count]
+                count = count + 1
+                if(count == colors.length){
+                    count = 0;
+                }
+            }
+
+            function pusher(){
+                var y = document.getElementById("in").value
+                
+                document.getElementById("in").value = ""
+                var valid = hexChecker(y)
+                if(valid==true){
+                    colors.push("#"+y)
+                    body.style.backgroundColor = "#" + y
+                    console.log(colors)
+
+
+                }else{
+                    alert("your input is not hex")
+                }               
+                
+            } 
+            var validCode = ["a","A","b","B","c","C","d","D","e","E","f","F","0","1","2","3","4","5","6","7","8","9"]
+            function hexChecker(hex){
+                if(hex.length == 6){
+                    for(var i = 0; i<=5;i++){
+                        if(!validCode.includes(hex[i])){
+                            return false
+                        }
+                    }
+                }else{
+                   return false
+                }
+                if(hex.length != 6){
+                    return false
+                }
+                return true
+            }
+
+       </script>
+    </body>
+</html>

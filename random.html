@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <span>number of letter</span>
+        <input id="in">
+        <button onclick="rand()">submit</button>
+        <script>
+            var b = document.getElementById("in").value
+            var arr = ["A", "B", "C", "D", "E", "F", "G" ,"H" ,"I" ,"K" ,"L" ,"M" ,"N" ,"O" ,"P" ,"Q" ,"R" ,"S" ,"T" ,"V" ,"X" ,"Y" ,"Z", " ", " ", " "]
+            var l = " "
+            function rand(){
+                var b = document.getElementById("in").value
+                for(var i = 0;i <= b;i++){
+                    console.log(i)
+                    l += arr[Math.floor(Math.random() * 23)]
+                    
+                }
+                alert(l)
+            }
+        </script>
+    </body>
+</html>

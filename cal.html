@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="text" id="cal">
+        <button onclick="getValue('+')">+</button>
+        <button onclick="getValue('-')">-</button>
+        <button onclick="getValue('*')">*</button>
+        <button onclick="getValue('/')">/</button>
+        <button onclick="getValue()">=</button>
+        <script>
+        var evaled = '';
+            function getValue(x){
+                
+                let id ;
+                if(x == '+'){
+                    id = document.getElementById("cal").value
+                    evaled =evaled+ id + '+'
+                    
+                    document.getElementById("cal").value = ""
+                    
+                }else if(x == '-'){
+                    id = document.getElementById("cal").value
+                    evaled = evaled+id + '-'
+                    
+                    document.getElementById("cal").value = ""
+                }else if(x == '*'){
+                    id = document.getElementById("cal").value
+                    evaled = evaled+id + '*'
+                    
+                    document.getElementById("cal").value = ""
+                }else if(x == '/'){
+                    id = document.getElementById("cal").value
+                    evaled = evaled+id + '/'
+                    
+                    document.getElementById("cal").value = ""
+                }else{
+                    id = document.getElementById("cal").value
+                    evaled = evaled +id
+                    alert(evaled)
+                     evaled = eval(evaled)
+                     document.getElementById("cal").value = evaled;
+                    
+
+                }
+
+
+            }
+        </script>
+    </body>
+</html>

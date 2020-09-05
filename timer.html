@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <input id="awd">
+        <button onclick="change()">wda</button>
+        <span id="min">00</span>
+        <span>:</span>
+        <span id="sec">00</span>
+        <script>
+            var minCal = 0;
+            var min = document.getElementById("min")
+            var sec = document.getElementById("sec")
+            var initialY
+            var y
+            var man = false
+            function change(){
+                y = document.getElementById("awd").value
+                initialY = y
+                if(man == true){
+                    alert("its already running")
+                }else{
+                    man = true
+                var men = setInterval(function (){
+                    if(y == 0){
+                        clearInterval(men)
+                        console.log("min")
+                    }else{
+                        console.log(y)
+                    y = y - 1
+                    if(parseInt(y/60) < 10){
+                        min.innerHTML = "0" + parseInt(y/60)
+                    }else{
+                        min.innerHTML = parseInt(y/60)
+                    }
+                    console.log(y)
+                    }
+
+                    if(y >= 60){
+                        if(y%60 < 10){
+                            sec.innerHTML = "0" + y%60
+                        }else{
+                            sec.innerHTML = y%60
+                        }
+                    }else{
+                        if(y < 10){
+                            sec.innerHTML = "0" + y%60
+                        }else{
+                            sec.innerHTML = y
+                        }
+                    }
+                }, 1000)
+                }
+            }
+        </script>
+    </body>
+</html>

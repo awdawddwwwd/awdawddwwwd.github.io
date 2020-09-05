@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        
+        <div style="margin-top: auto;">
+        <button onclick="add()">+</button>
+        <input id="input">
+        <button onclick="sub()">-</button>
+        <button onclick="p.innerHTML = 0">Reset</button>
+        </div>
+        <p style="font-size: 50px;" id="p1">0</p>
+        
+        <script>
+            var p = document.getElementById("p1")
+            var i = document.getElementById("input")
+            
+            function add(){
+                if(i.value == ""){
+                var temp = Number(p.innerHTML)
+                p.innerHTML = temp + 1
+                }else{
+                var temp = Number(p.innerHTML)
+                var din = Number(i.value)
+                p.innerHTML = temp + din
+                i.value = ""
+                }
+            }
+            function sub(){
+                if(i.value == ""){
+                    var temp = Number(p.innerHTML)
+                    p.innerHTML = temp - 1
+                }else{
+                    var temp = Number(p.innerHTML)
+                    var din = Number(i.value)
+                    p.innerHTML = temp - din
+                    i.value = ""
+                }
+                
+            }
+        </script>
+    </body>
+</html>

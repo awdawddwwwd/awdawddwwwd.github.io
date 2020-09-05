@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p{
+                font-size: 50px;
+                border: 1px solid gold;
+                margin:0px;
+            }
+            #div1{
+                width: 500px;
+                height: 400px;
+                overflow: scroll;
+            }
+            #man{
+                width: 170px;
+                height: 50px;
+            }
+            #awd{
+                width: 170px;
+                height: 50px;
+            }
+            #nen{
+                width: 170px;
+                height: 50px;
+            }
+            .spans{
+                font-size: 100px;
+                font-family: sans-serif;
+            }
+            #button{
+                width: 600px;
+                height: 100px;
+                margin-left: 35%;
+            }
+            #wda{
+                width: 500px;
+                height: 200px;
+                margin-left: 37%;
+            }
+            .mena{
+                font-size: 30px;
+            }
+            #div1{
+                margin-left: 35%;
+            }
+            #div1b{
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="wda">
+            <span id="min" class="spans">00</span>
+            <span class="spans">:</span>
+            <span id="sec" class="spans">00</span>
+            <span class="spans">:</span>
+            <span id="dol" class="spans">00</span>
+        </div>
+        <div id="button">
+        <button onclick="stop()" id="man"><span class="mena">stop</span></button>
+        <button onclick="rset()" id="awd"><span class="mena">reset</span></button>
+        <button onclick="lap()" id="nen"><span class="mena">lap</span></button>
+        </div>
+        <div id = "div1">
+            <div id="div1b" style="background-color: gold;float: left;width: 100px;height: 10000px;">
+
+            </div>
+        </div>
+        <script>
+            var penny = document.getElementById("dol")
+            var se = document.getElementById("sec")
+            var de = document.getElementById("min")
+            var den = 0
+            var count = 0
+            var sen = 0
+            var cou = 0
+            var lapy = 0
+            var geny = document.getElementById("div1")
+            var many = document.getElementById("man")
+            var isItOn = true;
+            function change(){
+                count = count + 1
+                if(count < 10){
+                    penny.innerHTML = "0" + count
+                }else{
+                    penny.innerHTML = count
+                }
+                if(count == 100){
+                    count = 0
+                    sen = sen + 1
+                    if(sen < 10){
+                        se.innerHTML = "0"+sen
+                    }else{
+                        se.innerHTML = sen
+                    }
+                    if(sen == 60){
+                        sen = 0
+                        den = den + 1
+                        if(den < 10){
+                            de.innerHTML = "0"+den
+                        }else{
+                            de.innerHTML = den
+                        }
+                    }
+                }
+            }
+            function stop(){
+                if(cou == 0){
+                    clearInterval(men)
+                    cou = cou + 1
+                    isItOn = false
+                }else if(cou == 1){
+                    cou = 0
+                    men = setInterval(change, 10)
+                    isItOn = true
+                }
+
+            }
+            function rset(){
+                se.innerHTML = "00"
+                de.innerHTML = "00"
+                penny.innerHTML = "00"
+                den = 0
+                sen = 0
+                count = 0
+                clearInterval(men)
+                cou = 1
+                lapy = 0
+            }
+            function lap(){
+                lapy = lapy + 1
+                var booo = document.createElement("p")
+                booo.innerHTML =de.innerHTML + ":" + se.innerHTML + ":" + penny.innerHTML
+                geny.appendChild(booo);
+                var wda = document.createElement("p")
+                wda.innerHTML = lapy
+                document.getElementById("div1b").appendChild(wda);
+                wda.style.visibility = "visible"
+
+            }
+            var men = setInterval(change, 10)   
+        </script>
+    </body>
+</html>

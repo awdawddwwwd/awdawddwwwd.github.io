@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .class1{
+                width: 100px;
+                height: 100px;
+                background-color: blanchedalmond;
+                float: left;
+            }
+            .class2{
+                width: 250px;
+                height: 250px; 
+                background-color: aqua; 
+                float: left;
+            }
+            .class3{
+                width: 400px; 
+                height: 400px;
+                background-color: blueviolet;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <button onclick="change()">Change</button>
+        <script>
+            var c = 0;
+            document.getElementById("div1").classList.add("class1")
+            document.getElementById("div2").classList.add("class2")
+            document.getElementById("div3").classList.add("class3")
+            function change(){
+            }
+        </script>    
+    </body>
+</html>

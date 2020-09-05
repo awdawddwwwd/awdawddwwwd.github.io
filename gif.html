@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id="leen">
+        <button onclick="man()">serach</button>
+        <div id="mate"></div>
+        <script>
+
+            var cicks = 0
+            async function man(){
+                if(cicks == 1){
+                    document.getElementById("mate").innerHTML = " "
+                    console.log(document.getElementById("mate").innerHTML)
+                    cicks = 0
+                }
+                var mn = document.getElementById("leen").value
+                var f = await fetch("https://api.giphy.com/v1/gifs/search?api_key=jOtNq8hQs7B2gvV7A2DbupBPrHO4TI0N&q="+mn+"&limit=25&offset=0&rating=g&lang=en")
+                var a = await f.json()
+                for(var i = 0; i < 25; i++){
+                    var b = document.createElement("img")
+                    document.getElementById("mate").appendChild(b)
+                    b.classList.add("mate")
+                    b.src = a.data[i].images.preview_gif.url
+                }
+                cicks += 1
+
+                
+            }
+            
+        </script>
+    </body>
+</html>
