@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            .text{
+                margin-left: 10px;
+                font-size: 30px;
+                font-family: 'Alata', sans-serif;
+                text-decoration: none;
+                
+            }
+            ul {
+                list-style: none;
+                margin: 0px;
+                margin-left: 0px;
+                padding-inline-start:0px;
+                
+            }
+            #n {
 
+            }
+            .f{
+                padding: 0px;
+            }
+            button{
+                width: 60px;
+                height: 60px;
+                background-color: wheat;
+                border: solid 1px;
+            }
+            input{
+                width: 300px;
+                height: 50px;
+            }
+            li{
+                padding: 0px;
+            }
+        </style>
     </head>
     <body>
         <input type="text" id="cal">
-        <button onclick="getValue('+')">+</button>
-        <button onclick="getValue('-')">-</button>
-        <button onclick="getValue('*')">*</button>
-        <button onclick="getValue('/')">/</button>
-        <button onclick="getValue()">=</button>
+        <ul id="n">
+        <li>
+        <button onclick="getValue('+')" class="f">+</button>
+        <button onclick="getValue('-')" class="f">-</button>
+        <button onclick="getValue('*')" class="f">*</button><button onclick="getValue()">=</button>
+        </li>
+        
+        <li><button onclick="document.getElementById('cal').value += '1'">1</button>
+        <button onclick="document.getElementById('cal').value += '2'">2</button>
+        <button onclick="document.getElementById('cal').value += '3'">3</button><button onclick="getValue('/')">/</button></li>
+        <li><button onclick="document.getElementById('cal').value += '4'">4</button>
+        <button onclick="document.getElementById('cal').value += '5'">5</button>
+        <button onclick="document.getElementById('cal').value += '6'">6</button><button onclick="document.getElementById('cal').value += '0'">0</button></li>
+        <li><button onclick="document.getElementById('cal').value += '7'">7</button>
+        <button onclick="document.getElementById('cal').value += '8'">8</button>
+        <button onclick="document.getElementById('cal').value += '9'">9</button>
+        </li>
+        <li></li>
+        </ul>
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
         <script>
         var evaled = '';
+
             function getValue(x){
                 
                 let id ;
@@ -42,10 +92,10 @@
                     alert(evaled)
                      evaled = eval(evaled)
                      document.getElementById("cal").value = evaled;
+                     evaled = ""
                     
 
                 }
-
 
             }
         </script>

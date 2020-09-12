@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            #leen{
+                width: 300px;
+                height: 40px;
+            }
+            #button{
+                width: 60px;
+                height: 45px;
+                background-color: wheat;
+                border-radius: 0%;
+            }
+            .text{
+                font-family: 'Alata', sans-serif;
+                font-size: 15px;
+            }
+            #div{
+                position: relative;
+                width: 400px;
+                height: 60px;
+                left: 500px;
+            }
+        </style>
+    </head>
     <body>
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+        <div id="div">
         <input type="text" id="leen">
-        <button onclick="man()">serach</button>
+        <button onclick="man()" id="button"><span class="text"> search</span></button>
+        </div>
         <div id="mate"></div>
         <script>
-
+            
             var cicks = 0
             async function man(){
                 if(cicks == 1){
@@ -18,9 +45,12 @@
                 var a = await f.json()
                 for(var i = 0; i < 25; i++){
                     var b = document.createElement("img")
+                    b.width = 200
+                    b.height = 200
                     document.getElementById("mate").appendChild(b)
                     b.classList.add("mate")
                     b.src = a.data[i].images.preview_gif.url
+                    console 
                 }
                 cicks += 1
 

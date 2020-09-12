@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
     <body>
+        <center>
         <div id="">
             <input type="text" id="mate">
             <button onclick="add()">+</button>
         </div>
+        <div id="mama">
+
+        </div>
+    </center>
         <script>
             var maty = document.getElementById("mate")
             function add(){
-                var y = maty.value
+                var y = maty.value + " "
                 maty.value = ""
                 var div = document.createElement("div")
                 var span = document.createElement("span")
                 var ds = document.createElement("button")
                 span.innerHTML = y
-                ds.innerHTML = "+"
+                ds.innerHTML = "-"
                 
-                document.body.appendChild(div) 
+                document.getElementById("mama").appendChild(div) 
                 div.appendChild(span)
                 div.appendChild(ds)                
                 ds.onclick = () => {

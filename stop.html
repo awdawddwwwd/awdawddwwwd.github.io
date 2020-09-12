@@ -59,7 +59,7 @@
             <span id="dol" class="spans">00</span>
         </div>
         <div id="button">
-        <button onclick="stop()" id="man"><span class="mena">stop</span></button>
+        <button onclick="stop()" id="man"><span class="mena" id="mr">stop</span></button>
         <button onclick="rset()" id="awd"><span class="mena">reset</span></button>
         <button onclick="lap()" id="nen"><span class="mena">lap</span></button>
         </div>
@@ -111,10 +111,12 @@
                     clearInterval(men)
                     cou = cou + 1
                     isItOn = false
+                    document.getElementById("mr").innerHTML = "start"
                 }else if(cou == 1){
                     cou = 0
                     men = setInterval(change, 10)
                     isItOn = true
+                    document.getElementById("mr").innerHTML = "stop"
                 }
 
             }
@@ -125,11 +127,11 @@
                 den = 0
                 sen = 0
                 count = 0
-                clearInterval(men)
-                cou = 1
+                stop()
                 lapy = 0
             }
             function lap(){
+                if(isItOn){
                 lapy = lapy + 1
                 var booo = document.createElement("p")
                 booo.innerHTML =de.innerHTML + ":" + se.innerHTML + ":" + penny.innerHTML
@@ -138,6 +140,7 @@
                 wda.innerHTML = lapy
                 document.getElementById("div1b").appendChild(wda);
                 wda.style.visibility = "visible"
+                }
 
             }
             var men = setInterval(change, 10)   
