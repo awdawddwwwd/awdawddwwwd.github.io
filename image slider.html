@@ -1,71 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            #h{
-                transition: width 3s;
-            }
-            .animation{
-                width: 0;
 
-            }
-            .aniup{
-                width: 100;
-            }
-        </style>
-    </head>
-    <body>
-        <img src="download (3).jpg" alt="" id="m">
-        <img src="download (3).jpg" alt="" id="h" class="animation" width="100">
-        <button onclick="next()">next</button>
-        <button onclick="prev()">prev</button>
-        <button onclick="slide()">slideshow mode</button>
-        <script>
-            let arr = ["download (3).jpg","download (4).jpg","download (5).jpg","download (6).jpg"]
-            let m = document.getElementById("m")
-            let curr = 0;
-            let sl = 0;
-            let clicks = true
-            function next(){
-                if(curr + 1 > 3){
-                    curr = 0
-                    m.src = arr[curr]
-                }else{
-                m.src = arr[curr + 1]
-                curr++
-                }
-            }
-            function prev(){
-                if(curr-1 < 0){
-                    curr = 3
-                    m.src = arr[curr]
-                    
-                }else{
-                m.src = arr[curr - 1]
-                curr -= 1
-                }
-            }
-            function slide(){
-                if(!clicks){
-                    clearInterval(men)
-                    clicks = true
-                    console.log(clicks)
-                }else{
-                    var men = setInterval(function(){
-                        if(sl + 1 > 3){
-                            sl = 0
-                            m.src = arr[sl]
-                        }else{
-                            sl++
-                            m.src = arr[sl]
-                        }
-                    }, 500)
-                    clicks = false
-                    console.log("nice")
-                }
-                
-            }
+<head>
+    <style>
+        #n {
+            position: relative;
+            transition: all 2s;
+            float: left;
+            width: 900px;
+            height: 100px;
+        }
+        
+        #n:hover {
+            right: 100px;
+        }
+        
+        #q {
+            width: 21px;
+            transition: all 2s;
+        }
+        
+        #q:hover {
+            width: 100px;
+        }
+    </style>
+</head>
 
-        </script>
-    </body>
+<body>
+    <div>
+        <div id="n">
+            <img src="download (3).jpg" alt="" class="w">
+            <img src="download (4).jpg" alt="" class="w">
+            <img src="download (5).jpg" alt="" class="w">
+            <img src="download (6).jpg" alt="" class="w">
+        </div>
+    </div>
+
+</body>
+
 </html>

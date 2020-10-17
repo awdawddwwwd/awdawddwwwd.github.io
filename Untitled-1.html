@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <button onclick="getText('Untitled-3.json')">on</button>
+    <script>
+        async function getText(textName) {
+            var text = await fetch(textName)
+            var ob = await text.json()
+            console.log(ob)
+            for (var i = 0; i < ob.length; i++) {
+                console.log(ob[i].name)
+            }
+        }
+    </script>
+</body>
+
+</html>

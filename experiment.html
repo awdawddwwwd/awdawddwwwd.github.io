@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #n {
+            position: relative;
+            transition: right 2s;
+            float: left;
+            right: 0px;
+            width: 900px;
+            height: 100px;
+        }
+        
+        #q {
+            width: 200px;
+            height: 200px;
+            transition: all 2s;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="q">
+        <div id="n">
+            <img src="download (3).jpg" alt="" class="w" width="210">
+            <img src="download (4).jpg" alt="" class="w" width="210">
+            <img src="download (5).jpg" alt="" class="w" width="210">
+            <img src="download (6).jpg" alt="" class="w" width="210">
+        </div>
+
+    </div>
+    <button onclick="left()">Left</button>
+    <button onclick="change()">Right</button>
+
+    <script>
+        let v = 0;
+
+        function change() {
+            document.getElementById("n").style.right = (v + 210) + "px";
+            v += 210;
+        }
+
+        function left() {
+            document.getElementById("n").style.right = (v - 210) + "px";
+            v -= 210;
+        }
+    </script>
+</body>
+
+</html>
